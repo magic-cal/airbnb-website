@@ -2,7 +2,12 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
+  ssr: false,
   target: 'static',
+
+  generate: {
+    fallback: '404.html',
+  },
 
   router: {
     base: '/',
@@ -28,7 +33,13 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -46,6 +57,8 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    // https://composition-api.nuxtjs.org/getting-started/setup
+    '@nuxtjs/composition-api/module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
