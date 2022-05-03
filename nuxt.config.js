@@ -4,6 +4,17 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  router: {
+    base: '/',
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'catchAll',
+        path: '*',
+        component: resolve(__dirname, 'pages/index.vue'),
+      })
+    },
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - airbnbWebsite',

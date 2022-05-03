@@ -77,15 +77,15 @@
 
         <v-row justify="center" align="center">
           <v-col cols="6" sm="4">
-            <v-img src="/living.png"></v-img>
+            <v-img :src="require('@/static/living.png')"></v-img>
           </v-col>
 
           <v-col cols="6" sm="4">
-            <v-img src="/shower.jpg"> </v-img>
+            <v-img :src="require('@/static/shower.jpg')"> </v-img>
           </v-col>
 
           <v-col v-if="$vuetify.breakpoint.mdAndUp" cols="6" sm="4">
-            <v-img src="/kitchen.jpg"> </v-img>
+            <v-img :src="require('@/static/kitchen.jpg')"> </v-img>
           </v-col>
         </v-row>
 
