@@ -129,32 +129,6 @@
             </div>
           </v-col>
         </v-row>
-
-        <v-row>
-          <v-col
-            v-for="({ icon, title, text }, i) in features"
-            :key="i"
-            cols="12"
-            md="4"
-          >
-            <v-card class="py-12 px-4" color="grey lighten-5" flat>
-              <v-theme-provider dark>
-                <div>
-                  <v-avatar color="primary" size="88">
-                    <v-icon large v-text="icon"></v-icon>
-                  </v-avatar>
-                </div>
-              </v-theme-provider>
-
-              <v-card-title
-                class="justify-center font-weight-black text-uppercase"
-                v-text="title"
-              ></v-card-title>
-
-              <v-card-text class="subtitle-1" v-text="text"> </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
       </v-container>
 
       <div class="py-12"></div>
@@ -261,37 +235,7 @@
           </v-col>
 
           <v-col :cols="12" :sm="6">
-            <v-theme-provider light>
-              <form
-                action="mailto:callum.mcclure98@gmail.com"
-                method="POST"
-                enctype="text/plain"
-              >
-                <v-row>
-                  <v-col cols="12">
-                    <v-text-field flat label="Name*" solo></v-text-field>
-                  </v-col>
-
-                  <v-col cols="12">
-                    <v-text-field flat label="Email*" solo></v-text-field>
-                  </v-col>
-
-                  <v-col cols="12">
-                    <v-text-field flat label="Subject*" solo></v-text-field>
-                  </v-col>
-
-                  <v-col cols="12">
-                    <v-textarea flat label="Message*" solo></v-textarea>
-                  </v-col>
-
-                  <v-col class="mx-auto" cols="auto">
-                    <v-btn type="submit" value="Send" color="accent" x-large>
-                      Submit
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </form>
-            </v-theme-provider>
+            <contact-form></contact-form>
           </v-col>
         </v-row>
       </v-container>
