@@ -10,15 +10,19 @@ export default {
   },
 
   router: {
-    base: '/',
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'catchAll',
-        path: '*',
-        component: resolve(__dirname, 'pages/index.vue'),
-      })
-    },
+    base: '/airbnbWebsite/',
   },
+
+  // router: {
+  //   base: '/',
+  //   extendRoutes(routes, resolve) {
+  //     routes.push({
+  //       name: 'catchAll',
+  //       path: '*',
+  //       component: resolve(__dirname, 'pages/index.vue'),
+  //     })
+  //   },
+  // },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
