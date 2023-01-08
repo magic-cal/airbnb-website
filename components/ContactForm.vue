@@ -41,45 +41,45 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from '@vue/composition-api'
-import { send as emailSend } from 'emailjs-com'
+import { computed, defineComponent, ref } from "@vue/composition-api";
+import { send as emailSend } from "emailjs-com";
 
 export default defineComponent({
-  name: 'Contact',
+  name: "Contact",
   setup() {
-    const form = ref<any>(null)
-    const name = ref('')
-    const phone = ref('')
-    const email = ref('')
-    const date = ref('')
-    const details = ref('')
+    const form = ref<any>(null);
+    const name = ref("");
+    const phone = ref("");
+    const email = ref("");
+    const date = ref("");
+    const details = ref("");
 
-    const valid = ref(true)
-    const datePopup = ref(false)
+    const valid = ref(true);
+    const datePopup = ref(false);
 
-    const formattedDate = computed(() => formatDate(date.value))
+    const formattedDate = computed(() => formatDate(date.value));
 
     const formatDate = (date: string) => {
-      if (!date) return null
+      if (!date) return null;
 
-      const [year, month, day] = date.split('-')
-      return `${day}-${month}-${year}`
-    }
+      const [year, month, day] = date.split("-");
+      return `${day}-${month}-${year}`;
+    };
 
     const validate = () => {
-      return form.value.validate()
-    }
+      return form.value.validate();
+    };
 
     const reset = () => {
-      return form.value.reset()
-    }
+      return form.value.reset();
+    };
     const sendEmail = () => {
       if (!validate()) {
-        return
+        return;
       }
       emailSend(
-        'service_j9477j5',
-        'template_rs5lw1k',
+        "default-service",
+        "template_vsrvm7q",
         {
           name: name.value,
           phone: phone.value,
@@ -87,18 +87,17 @@ export default defineComponent({
           date: formattedDate.value,
           details: details.value,
         },
-        'user_B76eyVlaAaisRGhim1W5r'
+        "user_B76eyVlaAaisRGhim1W5r"
       ).then(
         () => {
-          console.log('SUCCESS!')
-          alert('Sent')
-          reset()
+          alert("Sent");
+          reset();
         },
         (error) => {
-          console.log('FAILED...', error)
+          console.log("FAILED...", error);
         }
-      )
-    }
+      );
+    };
 
     return {
       name,
@@ -113,7 +112,7 @@ export default defineComponent({
       form,
       validate,
       reset,
-    }
+    };
   },
-})
+});
 </script>
