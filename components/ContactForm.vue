@@ -78,7 +78,7 @@ export default defineComponent({
         return;
       }
       emailSend(
-        "default-service",
+        "default_service",
         "template_vsrvm7q",
         {
           name: name.value,
